@@ -16,6 +16,20 @@ func Hello(name string) (string, error) {
 	return msg, nil
 }
 
+func Hellos(names []string) (map[string]string, error) {
+	msgs := make(map[string]string)
+
+	for _, name := {
+		msg, err := range names {
+			msg, err := Hello(name)
+			if err != nil {
+				return nil, err
+			}
+			msgs[name] = msg
+		}
+	}
+}
+
 // プログラムの初期化処理の一環で呼ばれる。Global varのinit後に実行される。
 func init() {
 	rand.Seed(time.Now().UnixNano())
